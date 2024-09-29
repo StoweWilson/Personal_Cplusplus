@@ -20,9 +20,11 @@ AccelerationInfo extractAcceleration(const string& problem) {
     if (regex_search(problem, match, accelerationRegex)) {
         // Extract the number as a double
         accelInfo.acceleration = stod(match[2].str());
-
+        if (match[1].matched) {
+            accelInfo.isConstant = true;
+        }
         // Check if "constant" is in the match (first capture group)
-        accelInfo.isConstant = (match[1].matched);
+        //accelInfo.isConstant = (match[1].matched);
     } else {
         cout << "Acceleration not found in the problem." << endl;
     }
@@ -79,7 +81,7 @@ void lookthrough( const string & problem) {
 }
 
 int main() {
-    string physicsProblem = "A car travels a distance of 100 mi with an initial velocity of 20 mi/h and accelerates to a final velocity of 60 mi/h The acceleration was 2.5 m/s^2.";
+    string physicsProblem = "A car travels a distance of 100 mi with an initial velocity of 20 mi/h and accelerates to a final velocity of 60 mi/h The constant acceleration was 2.5 m/s^2.";
     lookthrough(physicsProblem);
     return 0;
 }
