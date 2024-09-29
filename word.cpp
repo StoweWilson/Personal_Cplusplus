@@ -81,7 +81,9 @@ void lookthrough( const string & problem) {
 }
 
 int main() {
-    string physicsProblem = "A car travels a distance of 100 mi with an initial velocity of 20 mi/h and accelerates to a final velocity of 60 mi/h The constant acceleration was 2.5 m/s^2.";
+    string physicsProblem;
+    cout << "please enter your physics problem: ";
+    getline(cin, physicsProblem);
     lookthrough(physicsProblem);
     return 0;
 }
