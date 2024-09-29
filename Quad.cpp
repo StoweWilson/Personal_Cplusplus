@@ -1,13 +1,25 @@
 #include <iostream>
 #include <sstream>
 #include <cmath>
+#include <complex>
 using namespace std;
 
 int solve (double a,double b, double c) {
-    double square_root = sqrt((pow(b,2)+(-4 *c* a)));
-    double plus_square_root = ((-b) + square_root)/(2*a);
-    double minus_square_root = ((-b) - square_root)/(2*a);
-    cout <<"x=" << plus_square_root << "  x=" << minus_square_root << endl;
+    double check = (pow(b, 2) - 4 * a * c);
+
+    if (check >= 0 ) {
+        double square_root = sqrt((pow(b,2)+(-4 *c* a)));
+        double plus_square_root = ((-b) + square_root)/(2*a);
+        double minus_square_root = ((-b) - square_root)/(2*a);
+        cout <<"x=" << plus_square_root << "  x=" << minus_square_root << endl;
+    }
+    else {
+        complex<double> sqrt_discriminant = sqrt(complex<double>(check, 0));
+        complex<double> plus_square_root = ((-b) + sqrt_discriminant) / (2.0 * a);
+        complex<double> minus_square_root = ((-b) - sqrt_discriminant) / (2.0 * a);
+        cout <<" else x=" << plus_square_root << "  x=" << minus_square_root << endl;
+    }
+
 }
 int main() {
     double a,b,c;
