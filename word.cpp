@@ -3,7 +3,7 @@
 //
 #include <iostream>
 #include <string>
-#include <regex>  // For regular expressions
+#include <regex>  // For regular expressions 
 using namespace std;
 struct AccelerationInfo {
     double acceleration;
