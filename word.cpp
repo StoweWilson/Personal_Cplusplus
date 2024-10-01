@@ -15,7 +15,7 @@ AccelerationInfo extractAcceleration(const string& problem) {
     regex accelerationRegex(R"(\b(?:constant\s)?acceleration\b.*?(\d+\.?\d*)\s*(m/s\^2|mi/h))");
     regex gravityRegex(R"(\b(gravitational acceleration|gravity)\b.*?(\d+\.?\d*)\s*(m/s\^2))");
 
-    smatch match;
+    smatch match; 
     AccelerationInfo accelInfo = {0, false,""}; // Initialize with default values
 
     // Check for gravitational acceleration
